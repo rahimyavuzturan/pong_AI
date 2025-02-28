@@ -29,13 +29,13 @@ class PongGame:
             keys = pygame.key.get_pressed()
 
             if keys[pygame.K_w]:
-                game.move_paddle(left=True, up=True)
+                self.game.move_paddle(left=True, up=True)
             if keys[pygame.K_s]:
-                game.move_paddle(left=True, up=False)
+                self.game.move_paddle(left=True, up=False)
 
 
-            game.loop()
-            game.draw(False, True) # kaç hit olduğunu göstercek
+            game_info = self.game.loop()
+            self.game.draw(False, True) # kaç hit olduğunu göstercek
             pygame.display.update()
 
         pygame.quit()
